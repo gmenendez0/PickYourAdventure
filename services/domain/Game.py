@@ -1,5 +1,8 @@
 from services.domain.Adventure import Adventure
 from services.domain.GameStatus import GameStatus
+from services.domain.exceptions.GameAlreadyFinishedException import GameAlreadyFinishedException
+from services.domain.exceptions.GameHasAlreadyStartedException import GameAlreadyStartedException
+
 
 class Game:
     def __init__(self):
@@ -13,7 +16,7 @@ class Game:
 
     def _validate_game_start(self) -> None:
         if self._game_has_started():
-            raise Exception("Game has already started.") #TODO Cambiar por excepción personalizada
+            raise GameAlreadyStartedException()
 
     def _set_status(self, status: GameStatus) -> None:
         self._status = status
@@ -33,7 +36,7 @@ class Game:
 
     def _validate_play(self) -> None:
         if self._game_has_finished():
-            raise Exception("Game has already finished.") #TODO Cambiar por excepción personalizada
+            raise GameAlreadyFinishedException()
 
     def _set_current_adventure(self, adventure: Adventure) -> None:
         self._current_adventure = adventure

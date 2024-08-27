@@ -1,3 +1,6 @@
+from services.domain.exceptions.InvalidOptionIndexException import InvalidOptionIndexError
+
+
 class Adventure:
     def __init__(self, description: str, options: list["Adventure"]):
         self._id = id(self)
@@ -10,7 +13,7 @@ class Adventure:
 
     def _validate_option_index(self, index: int) -> None:
         if index < 0 or index >= len(self._options):
-            raise Exception("Invalid option") #TODO Cambiar por excepción personalizada
+            raise InvalidOptionIndexError()
 
     def get_adventure_description_and_options_data(self) -> dict:
         return {
