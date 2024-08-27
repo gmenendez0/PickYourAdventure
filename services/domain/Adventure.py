@@ -1,6 +1,5 @@
 from services.domain.exceptions.InvalidOptionIndexException import InvalidOptionIndexError
 
-
 class Adventure:
     def __init__(self, description: str, options: list["Adventure"]):
         self._id = id(self)
