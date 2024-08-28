@@ -48,7 +48,7 @@
 To start the application, run:
 
 ```bash
-python src/app.py
+python app.py
 ```
 
 ## API Documentation
