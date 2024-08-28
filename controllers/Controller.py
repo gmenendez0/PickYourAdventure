@@ -39,7 +39,7 @@ class Controller(ABC):
         elif isinstance(exception, InvalidOptionIndexError):
             return self.bad_request_response(self._format_exception(exception, {'status': HTTPStatus.BAD_REQUEST}))
         else:
-            return self.internal_server_error_response(self._format_exception(exception, {'status': HTTPStatus.INTERNAL_SERVER_ERROR}))
+            return self.internal_server_error_response(self._format_exception(exception, {'status': HTTPStatus.INTERNAL_SERVER_ERROR, 'title': STANDARD_INTERNAL_SERVER_ERROR_MESSAGE}))
 
     def _format_exception(self, exception: Exception, additional_data: dict) -> dict:
         return self._error_formatter.format(exception, additional_data)
