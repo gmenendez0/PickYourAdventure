@@ -23,7 +23,3 @@ class GameService:
 
     def _get_game_status_dto(self) -> GameStatusDto:
         return GameStatusDto(self._game.get_current_adventure(), self._game.get_status())
-        #return {
-        #    "current_adventure": self._game.get_current_adventure_data(),
-        #    "status": self._game.get_status().value
-        #}

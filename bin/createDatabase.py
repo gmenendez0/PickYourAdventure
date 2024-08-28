@@ -26,4 +26,4 @@ def initialize_database(db_path: str):
     connection.commit()
     connection.close()
 
-initialize_database('db.sqlite3')
+initialize_database('../db.sqlite3')

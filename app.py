@@ -1,22 +1,14 @@
-from flask import Flask, jsonify, request
+from flask import Flask
+from controllers.GameController import game_bp
 
 app = Flask(__name__)
 
-@app.route('/start', methods=['POST'])
-def start_adventure():
-    return jsonify()
-
-@app.route('/choose', methods=['POST'])
-def choose_path():
-    data = request.json
-    choice = data.get('choice')
-    return jsonify()
+app.register_blueprint(game_bp, url_prefix='/game')
 
 if __name__ == "__main__":
     app.run(debug=True)
 
 #PENDING:
-#2. Implementar capa controller (con manejo de errores personalizado para poder cambiar de tipo de error)
 #3. Documentar
 #4. Implementar tests unitarios
 #5. Implementar tests de integracion
