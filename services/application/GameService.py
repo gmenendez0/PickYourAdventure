@@ -17,8 +17,8 @@ class GameService:
     def _get_first_adventure(self) -> Adventure:
         return self._adventureService.get_first_adventure()
 
-    def choose_next_adventure(self, index: int) -> GameStatusDto:
-        self._game.choose_next_adventure(index)
+    def choose_next_adventure(self, adventure_id: int) -> GameStatusDto:
+        self._game.choose_next_adventure(adventure_id)
         return self._get_game_status_dto()
 
     def _get_game_status_dto(self) -> GameStatusDto:

@@ -32,25 +32,25 @@ class Game:
         return self._status
 
     def _game_has_started(self) -> bool:
-        return self.get_status == GameStatus.STARTED
+        return self.get_status() == GameStatus.STARTED
 
     def _game_has_finished(self) -> bool:
-        return self.get_status == GameStatus.FINISHED
+        return self.get_status() == GameStatus.FINISHED
 
-    def choose_next_adventure(self, index: int) -> None:
+    def choose_next_adventure(self, adventure_id: int) -> None:
         self._validate_play()
-        self._set_current_adventure(self._current_adventure.get_option(index))
+        self._set_current_adventure(self._current_adventure.get_option(adventure_id))
 
     def _validate_play(self) -> None:
-        if not self._game_has_started():
-            raise GameNotStartedException()
-
         if self._game_has_finished():
             raise GameAlreadyFinishedException()
 
+        if not self._game_has_started():
+            raise GameNotStartedException()
+
     def _set_current_adventure(self, adventure: Adventure) -> None:
         if adventure is None:
-            raise ValueError("Adventure cannot be None")
+            raise ValueError("Adventure cannot be None")  #TODO create a custom exception for this
 
         self._current_adventure = adventure
 

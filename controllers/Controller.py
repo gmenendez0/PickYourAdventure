@@ -12,6 +12,7 @@ class Controller(ABC):
 
     @staticmethod
     def _format_response(data: dict, status_code: HTTPStatus) -> tuple[dict, HTTPStatus]:
+        print("data", data)
         return data, status_code
 
     def ok_response(self, data: dict) -> tuple[dict, HTTPStatus]:

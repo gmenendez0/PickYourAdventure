@@ -1,4 +1,4 @@
-from services.domain.exceptions.InvalidOptionIndexException import InvalidOptionIndexException
+from services.domain.exceptions.InvalidOptionIdException import InvalidOptionIdException
 
 class Adventure:
     def __init__(self, description: str, options: list["Adventure"]):
@@ -6,13 +6,15 @@ class Adventure:
         self._description = description
         self._options = options
 
-    def get_option(self, index: int) -> "Adventure":
-        self._validate_option_index(index)
-        return self._options[index]
+    def get_id(self) -> int:
+        return self._id
 
-    def _validate_option_index(self, index: int) -> None:
-        if index < 0 or index >= len(self._options):
-            raise InvalidOptionIndexException()
+    def get_option(self, adventure_id: int) -> "Adventure":
+        for option in self._options:
+            if option.get_id() == adventure_id:
+                return option
+
+        raise InvalidOptionIdException()
 
     def get_adventure_description_and_options_data(self) -> dict:
         return {
