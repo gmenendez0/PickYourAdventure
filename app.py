@@ -15,8 +15,8 @@ if __name__ == "__main__":
 
 
 #PENDING:
-#4. Implementar tests unitarios
-#5. Implementar tests de integracion
+#4. Implementar test unitarios
+#5. Implementar test de integracion
 #6. Formatear codigo con black
 #7. Dockerizar
 #8. Readme
