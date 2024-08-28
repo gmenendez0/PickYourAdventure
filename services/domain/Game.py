@@ -1,7 +1,7 @@
 from services.domain.Adventure import Adventure
 from services.domain.GameStatus import GameStatus
 from services.domain.exceptions.GameAlreadyFinishedException import GameAlreadyFinishedException
-from services.domain.exceptions.GameHasAlreadyStartedException import GameAlreadyStartedException
+from services.domain.exceptions.GameAlreadyStartedException import GameAlreadyStartedException
 from services.domain.exceptions.GameNotStartedException import GameNotStartedException
 
 
