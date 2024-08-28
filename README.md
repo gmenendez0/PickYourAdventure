@@ -14,8 +14,6 @@
   - **`repositories/`**: Contains implementations for accessing the database.
 
 - **`tests/`**: Contains unit and integration tests for the application.
-  - **`test_game.py`**: Unit tests for game logic.
-  - **`test_game_controller.py`**: Tests for API controllers.
 
 - **`db.sqlite3`**: SQLite database file used by the application.
 
