@@ -19,6 +19,16 @@
 
 - **`db.sqlite3`**: SQLite database file used by the application.
 
+## Improvement Point:
+
+1. **Loading the First Adventure:**
+   - Upon starting the application, the first adventure is loaded into memory, which in turn recursively loads all other adventures in the graph. This leads to the following two pain points:
+   
+     a. **Memory Performance:** Although the references to higher hierarchy nodes will be lost as the game progresses, freeing up memory, initially, the entire adventure graph will be loaded into memory. This could be suboptimal in terms of performance.
+
+     b. **Server Startup Delay:** Since the entire graph needs to be loaded into memory to start the game, there might be a delay in server startup due to the large number of read operations that need to be performed against the database.
+
+
 ## Requirements
 
 - Python 3.6 or higher
