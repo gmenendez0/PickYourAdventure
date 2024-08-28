@@ -1,4 +1,5 @@
 from controllers.Controller import Controller
+from controllers.exceptions.InvalidRequestDataException import InvalidRequestDataException
 from services.application.GameService import GameService
 
 from flask import Blueprint, request
@@ -20,11 +21,10 @@ class GameController(Controller):
     def choose_path(self):
         try:
             data = self.get_request_data(request)
-            print(data)
             choice = data.get('choiceId')
 
             if choice is None:
-                raise ValueError("field {choiceId} cannot be empty") #TODO create a custom exception for this
+                raise InvalidRequestDataException("Field {choiceId} cannot be empty.")
 
             game_status_dto = self._game_service.choose_next_adventure(choice)
             return self.ok_response(game_status_dto.to_dict())

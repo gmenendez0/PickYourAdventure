@@ -3,6 +3,7 @@ from services.domain.GameStatus import GameStatus
 from services.domain.exceptions.GameAlreadyFinishedException import GameAlreadyFinishedException
 from services.domain.exceptions.GameAlreadyStartedException import GameAlreadyStartedException
 from services.domain.exceptions.GameNotStartedException import GameNotStartedException
+from services.domain.exceptions.InvalidAdventureException import InvalidAdventureException
 
 
 class Game:
@@ -50,7 +51,7 @@ class Game:
 
     def _set_current_adventure(self, adventure: Adventure) -> None:
         if adventure is None:
-            raise ValueError("Adventure cannot be None")  #TODO create a custom exception for this
+            raise InvalidAdventureException("Adventure cannot be None")
 
         self._current_adventure = adventure
 
