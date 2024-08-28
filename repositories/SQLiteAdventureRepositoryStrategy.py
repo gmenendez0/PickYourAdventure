@@ -6,8 +6,7 @@ import sqlite3
 from services.domain.Adventure import Adventure
 
 class SQLiteAdventureRepositoryStrategy(RepositoryStrategy):
-    def __init__(self, table_name: str, db_path: str):
-        self._table_name = table_name
+    def __init__(self, db_path: str):
         self._db_path = db_path
 
     def _get_connection(self) -> sqlite3.Connection:
