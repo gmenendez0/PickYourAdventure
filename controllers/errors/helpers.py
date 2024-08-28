@@ -17,4 +17,12 @@ EXCEPTION_TO_STATUS = {
 }
 
 def get_http_error_code(exception: Exception) -> HTTPStatus:
+    """Retrieve the appropriate HTTP status code for a given exception.
+
+    Args:
+        exception (Exception): The exception for which to retrieve the HTTP status code.
+
+    Returns:
+        HTTPStatus: The HTTP status code corresponding to the exception. Defaults to INTERNAL_SERVER_ERROR if the exception type is not found.
+    """
     return EXCEPTION_TO_STATUS.get(str(type(exception)), HTTPStatus.INTERNAL_SERVER_ERROR)

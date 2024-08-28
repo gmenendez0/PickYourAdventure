@@ -12,6 +12,11 @@ class GameController(Controller):
         self._game_service = GameService()
 
     def start_adventure(self):
+        """Handle the request to start a new adventure.
+
+        Returns:
+            tuple[dict, HTTPStatus]: A tuple containing the game status and HTTP status code.
+        """
         try:
             game_status_dto = self._game_service.start_game()
             return self.ok_response(game_status_dto.to_dict())
@@ -19,6 +24,11 @@ class GameController(Controller):
             return self.handle_exception(e)
 
     def choose_path(self):
+        """Handle the request to choose a path in the game.
+
+        Returns:
+            tuple[dict, HTTPStatus]: A tuple containing the updated game status and HTTP status code.
+        """
         try:
             data = self.get_request_data(request)
             choice = data.get('choiceId')

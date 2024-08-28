@@ -15,7 +15,6 @@ if __name__ == "__main__":
 
 
 #PENDING:
-#3. Documentar
 #4. Implementar tests unitarios
 #5. Implementar tests de integracion
 #6. Formatear codigo con black
