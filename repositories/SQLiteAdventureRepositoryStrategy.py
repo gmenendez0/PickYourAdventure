@@ -5,9 +5,6 @@ import sqlite3
 
 from services.domain.Adventure import Adventure
 
-def _close_connection(connection: sqlite3.Connection) -> None:
-    connection.close()
-
 class SQLiteAdventureRepositoryStrategy(RepositoryStrategy):
     def __init__(self, table_name: str, db_path: str):
         self._table_name = table_name
@@ -16,13 +13,17 @@ class SQLiteAdventureRepositoryStrategy(RepositoryStrategy):
     def _get_connection(self) -> sqlite3.Connection:
         return sqlite3.connect(self._db_path) #Chequear si se conecta bien con un try except
 
+    @staticmethod
+    def _close_connection(connection: sqlite3.Connection) -> None:
+        connection.close()
+
     def get_by_id(self, instance_id: int):
         connection = self._get_connection()
         cursor = connection.cursor()
 
         adventure = self._get_adventure_by_id(instance_id, cursor)
 
-        _close_connection(connection)
+        self._close_connection(connection)
         return adventure
 
     #NO PUEDE HABER CICLOS DE NINGUN TIPO EN EL GRAFO DE AVENTURAS O CAE EN UNA RECURSION INFINITA
