@@ -1,5 +1,6 @@
 from enum import Enum
 
+
 class GameStatus(Enum):
     NOT_STARTED = 1
     STARTED = 2

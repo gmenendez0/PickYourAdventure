@@ -3,7 +3,10 @@ from http import HTTPStatus
 from src.controllers.errors.ErrorFormatter import ErrorFormatter
 from src.controllers.errors.helpers import get_http_error_code
 
-STANDARD_INTERNAL_SERVER_ERROR_MESSAGE = 'An internal server error occurred. Please try again later.'
+STANDARD_INTERNAL_SERVER_ERROR_MESSAGE = (
+    "An internal server error occurred. Please try again later."
+)
+
 
 class RFC7807ErrorFormatter(ErrorFormatter):
     def format(self, exception: Exception) -> dict:
@@ -16,7 +19,11 @@ class RFC7807ErrorFormatter(ErrorFormatter):
             dict: A dictionary containing the RFC 7807 error format, including 'status', 'title', and 'type'.
         """
         status = get_http_error_code(exception)
-        title = STANDARD_INTERNAL_SERVER_ERROR_MESSAGE if status == HTTPStatus.INTERNAL_SERVER_ERROR else str(exception)
-        err_type = 'about:blank'
+        title = (
+            STANDARD_INTERNAL_SERVER_ERROR_MESSAGE
+            if status == HTTPStatus.INTERNAL_SERVER_ERROR
+            else str(exception)
+        )
+        err_type = "about:blank"
 
-        return {'status': status, 'title': title, 'type': err_type}
+        return {"status": status, "title": title, "type": err_type}

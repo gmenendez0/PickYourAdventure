@@ -3,6 +3,7 @@ from src.services.domain.Adventure import Adventure
 from src.services.domain.Game import Game
 from src.services.dto.GameStatusDto import GameStatusDto
 
+
 class GameService:
     def __init__(self):
         self._game = Game()
@@ -51,4 +52,6 @@ class GameService:
         Returns:
             GameStatusDto: Data transfer object containing the current adventure and game status.
         """
-        return GameStatusDto(self._game.get_current_adventure(), self._game.get_status())
+        return GameStatusDto(
+            self._game.get_current_adventure(), self._game.get_status()
+        )

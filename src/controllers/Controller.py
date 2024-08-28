@@ -6,12 +6,15 @@ from flask import Request
 from src.controllers.errors.RFC7807ErrorFormatter import RFC7807ErrorFormatter
 from src.controllers.errors.helpers import get_http_error_code
 
+
 class Controller(ABC):
     def __init__(self):
         self._error_formatter = RFC7807ErrorFormatter()
 
     @staticmethod
-    def _format_response(data: dict, status_code: HTTPStatus) -> tuple[dict, HTTPStatus]:
+    def _format_response(
+        data: dict, status_code: HTTPStatus
+    ) -> tuple[dict, HTTPStatus]:
         """Format the response data and status code into a tuple.
 
         Args:
@@ -44,7 +47,9 @@ class Controller(ABC):
             tuple[dict, HTTPStatus]: A tuple containing the formatted error data and the corresponding HTTP status code.
         """
         print(f"An exception occurred: {exception}")
-        return self._format_response(self._format_exception(exception), get_http_error_code(exception))
+        return self._format_response(
+            self._format_exception(exception), get_http_error_code(exception)
+        )
 
     def _format_exception(self, exception: Exception) -> dict:
         """Format an exception using the RFC7807 error formatter.

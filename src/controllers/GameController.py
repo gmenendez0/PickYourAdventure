@@ -1,10 +1,13 @@
 from src.controllers.Controller import Controller
-from src.controllers.exceptions.InvalidRequestDataException import InvalidRequestDataException
+from src.controllers.exceptions.InvalidRequestDataException import (
+    InvalidRequestDataException,
+)
 from src.services.application.GameService import GameService
 
 from flask import Blueprint, request
 
-game_bp = Blueprint('game', __name__)
+game_bp = Blueprint("game", __name__)
+
 
 class GameController(Controller):
     def __init__(self):
@@ -31,7 +34,7 @@ class GameController(Controller):
         """
         try:
             data = self.get_request_data(request)
-            choice = data.get('choiceId')
+            choice = data.get("choiceId")
 
             if choice is None:
                 raise InvalidRequestDataException("Field {choiceId} cannot be empty.")

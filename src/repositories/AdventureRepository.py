@@ -1,4 +1,6 @@
-from src.repositories.SQLiteAdventureRepositoryStrategy import SQLiteAdventureRepositoryStrategy
+from src.repositories.SQLiteAdventureRepositoryStrategy import (
+    SQLiteAdventureRepositoryStrategy,
+)
 from src.services.domain.Adventure import Adventure
 
 

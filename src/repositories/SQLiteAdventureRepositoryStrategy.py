@@ -5,6 +5,7 @@ import sqlite3
 
 from src.services.domain.Adventure import Adventure
 
+
 class SQLiteAdventureRepositoryStrategy(RepositoryStrategy):
     def __init__(self, db_path: str):
         self._db_path = db_path
@@ -65,7 +66,9 @@ class SQLiteAdventureRepositoryStrategy(RepositoryStrategy):
         Notes:
             This method should only be used if there are no cycles in the graph of adventures
         """
-        cursor.execute('SELECT description FROM adventures WHERE id = ?', (adventure_id,))
+        cursor.execute(
+            "SELECT description FROM adventures WHERE id = ?", (adventure_id,)
+        )
         result = cursor.fetchone()
 
         if result is None:
@@ -73,11 +76,15 @@ class SQLiteAdventureRepositoryStrategy(RepositoryStrategy):
 
         description = result[0]
 
-        cursor.execute('SELECT option_id FROM adventure_options WHERE adventure_id = ?', (adventure_id,))
+        cursor.execute(
+            "SELECT option_id FROM adventure_options WHERE adventure_id = ?",
+            (adventure_id,),
+        )
         options_result = cursor.fetchall()
 
-        options = [self._get_adventure_by_id(option_id[0], cursor) for option_id in options_result]
+        options = [
+            self._get_adventure_by_id(option_id[0], cursor)
+            for option_id in options_result
+        ]
 
         return Adventure(description, options)
-
-

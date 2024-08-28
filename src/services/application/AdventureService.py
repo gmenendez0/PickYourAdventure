@@ -3,6 +3,7 @@ from src.services.domain.Adventure import Adventure
 
 FIRST_ADVENTURE_ID = 1
 
+
 class AdventureService:
     def __init__(self):
         self._repository = AdventureRepository()

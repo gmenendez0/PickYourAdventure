@@ -1,4 +1,7 @@
-from src.services.domain.exceptions.InvalidOptionIdException import InvalidOptionIdException
+from src.services.domain.exceptions.InvalidOptionIdException import (
+    InvalidOptionIdException,
+)
+
 
 class Adventure:
     def __init__(self, description: str, options: list["Adventure"]):
@@ -40,7 +43,7 @@ class Adventure:
         """
         return {
             "description": self._description,
-            "options": self._get_options_ids_and_descriptions()
+            "options": self._get_options_ids_and_descriptions(),
         }
 
     def _get_options_ids_and_descriptions(self) -> list[dict]:
@@ -58,10 +61,7 @@ class Adventure:
         Returns:
             dict: A dictionary containing the ID and description of the adventure.
         """
-        return {
-            "id": self._id,
-            "description": self._description
-        }
+        return {"id": self._id, "description": self._description}
 
     def is_ending_adventure(self) -> bool:
         """Determine if the adventure is an ending adventure.
@@ -72,4 +72,3 @@ class Adventure:
             bool: True if the adventure has no options, False otherwise.
         """
         return len(self._options) == 0
-

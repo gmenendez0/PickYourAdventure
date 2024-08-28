@@ -1,6 +1,7 @@
 from src.services.domain.Adventure import Adventure
 from src.services.domain.GameStatus import GameStatus
 
+
 class GameStatusDto:
     def __init__(self, current_adventure: Adventure, status: GameStatus):
         self._current_adventure = current_adventure
@@ -15,5 +16,5 @@ class GameStatusDto:
         """
         return {
             "current_adventure": self._current_adventure.get_adventure_description_and_options_data(),
-            "status": self._status.__str__()
+            "status": self._status.__str__(),
         }
