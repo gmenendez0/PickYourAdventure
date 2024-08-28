@@ -1,5 +1,5 @@
-from repositories.AdventureRepository import AdventureRepository
-from services.domain.Adventure import Adventure
+from src.repositories.AdventureRepository import AdventureRepository
+from src.services.domain.Adventure import Adventure
 
 FIRST_ADVENTURE_ID = 1
 

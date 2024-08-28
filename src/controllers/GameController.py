@@ -1,6 +1,6 @@
-from controllers.Controller import Controller
-from controllers.exceptions.InvalidRequestDataException import InvalidRequestDataException
-from services.application.GameService import GameService
+from src.controllers.Controller import Controller
+from src.controllers.exceptions.InvalidRequestDataException import InvalidRequestDataException
+from src.services.application.GameService import GameService
 
 from flask import Blueprint, request
 

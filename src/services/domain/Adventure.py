@@ -1,4 +1,4 @@
-from services.domain.exceptions.InvalidOptionIdException import InvalidOptionIdException
+from src.services.domain.exceptions.InvalidOptionIdException import InvalidOptionIdException
 
 class Adventure:
     def __init__(self, description: str, options: list["Adventure"]):

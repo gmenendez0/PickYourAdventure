@@ -1,11 +1,11 @@
 import unittest
-from services.domain.Adventure import Adventure
-from services.domain.Game import Game
-from services.domain.GameStatus import GameStatus
-from services.domain.exceptions.GameAlreadyFinishedException import GameAlreadyFinishedException
-from services.domain.exceptions.GameAlreadyStartedException import GameAlreadyStartedException
-from services.domain.exceptions.GameNotStartedException import GameNotStartedException
-from services.domain.exceptions.InvalidAdventureException import InvalidAdventureException
+from src.services.domain.Adventure import Adventure
+from src.services.domain.Game import Game
+from src.services.domain.GameStatus import GameStatus
+from src.services.domain.exceptions.GameAlreadyFinishedException import GameAlreadyFinishedException
+from src.services.domain.exceptions.GameAlreadyStartedException import GameAlreadyStartedException
+from src.services.domain.exceptions.GameNotStartedException import GameNotStartedException
+from src.services.domain.exceptions.InvalidAdventureException import InvalidAdventureException
 
 class TestGame(unittest.TestCase):
     def setUp(self):

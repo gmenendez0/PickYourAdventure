@@ -1,5 +1,5 @@
-from repositories.SQLiteAdventureRepositoryStrategy import SQLiteAdventureRepositoryStrategy
-from services.domain.Adventure import Adventure
+from src.repositories.SQLiteAdventureRepositoryStrategy import SQLiteAdventureRepositoryStrategy
+from src.services.domain.Adventure import Adventure
 
 
 class AdventureRepository:

@@ -1,9 +1,9 @@
 from sqlite3 import Cursor
 
-from repositories.RepositoryStrategy import RepositoryStrategy
+from src.repositories.RepositoryStrategy import RepositoryStrategy
 import sqlite3
 
-from services.domain.Adventure import Adventure
+from src.services.domain.Adventure import Adventure
 
 class SQLiteAdventureRepositoryStrategy(RepositoryStrategy):
     def __init__(self, db_path: str):

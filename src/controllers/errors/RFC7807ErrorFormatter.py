@@ -1,7 +1,7 @@
 from http import HTTPStatus
 
-from controllers.errors.ErrorFormatter import ErrorFormatter
-from controllers.errors.helpers import get_http_error_code
+from src.controllers.errors.ErrorFormatter import ErrorFormatter
+from src.controllers.errors.helpers import get_http_error_code
 
 STANDARD_INTERNAL_SERVER_ERROR_MESSAGE = 'An internal server error occurred. Please try again later.'
 

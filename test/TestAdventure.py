@@ -1,6 +1,6 @@
 import unittest
-from services.domain.Adventure import Adventure
-from services.domain.exceptions.InvalidOptionIdException import InvalidOptionIdException
+from src.services.domain.Adventure import Adventure
+from src.services.domain.exceptions.InvalidOptionIdException import InvalidOptionIdException
 
 class TestAdventure(unittest.TestCase):
     def setUp(self):

@@ -1,7 +1,7 @@
-from services.application.AdventureService import AdventureService
-from services.domain.Adventure import Adventure
-from services.domain.Game import Game
-from services.dto.GameStatusDto import GameStatusDto
+from src.services.application.AdventureService import AdventureService
+from src.services.domain.Adventure import Adventure
+from src.services.domain.Game import Game
+from src.services.dto.GameStatusDto import GameStatusDto
 
 class GameService:
     def __init__(self):
