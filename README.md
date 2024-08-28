@@ -144,3 +144,11 @@ The request body must contain the following JSON structure:
     "status": "started"
 }
 ```
+
+To run unit tests, set the `PYTHONPATH` environment variable to reference the `PickYourAdventure` directory. Example:
+
+```bash
+export PYTHONPATH=$PYTHONPATH:/home/user123/PickYourAdventure
+cd /home/user123/PickYourAdventure
+python3 test/TestAdventure.py
+```
