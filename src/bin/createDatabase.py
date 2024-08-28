@@ -38,4 +38,4 @@ def initialize_database(db_path: str):
     print("Base de datos inicializada con nuevas tablas.")
 
 
-initialize_database("../db.sqlite3")
+initialize_database("../../db.sqlite3")

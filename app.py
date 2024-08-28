@@ -1,7 +1,6 @@
 from flask import Flask
 from src.controllers.GameController import game_bp, GameController
 
-
 def create_app():
     main_app = Flask(__name__)
     game_controller = GameController()

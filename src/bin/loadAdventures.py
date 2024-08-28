@@ -1,6 +1,6 @@
 import sqlite3
 
-DB_PATH = "../db.sqlite3"
+DB_PATH = "../../db.sqlite3"
 
 
 def get_connection():

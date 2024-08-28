@@ -1,5 +1,5 @@
 import unittest
-from src.app import create_app
+from app import create_app
 
 class APITestCase(unittest.TestCase):
     @classmethod

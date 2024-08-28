@@ -25,12 +25,12 @@
 
 ## Installation
 
-1. **Clone the repository**
+1. **Clone the repository and cd to PickYourAdventure directory**
 
 2. **Create a virtual environment and install dependencies**:
 
     ```bash
-    python -m venv venv
+    python3 -m venv venv
     source venv/bin/activate  # On Windows use `venv\Scripts\activate`
     pip install -r requirements.txt
     ```
@@ -40,7 +40,7 @@
     Run the following script to create and initialize the database:
 
     ```bash
-    python scripts/initializeDatabase.py
+    python src/bin/initializeDatabase.py
     ```
 
 ## Usage
