@@ -49,11 +49,10 @@ class Game:
             raise GameAlreadyFinishedException()
 
     def _set_current_adventure(self, adventure: Adventure) -> None:
+        if adventure is None:
+            raise ValueError("Adventure cannot be None")
+
         self._current_adventure = adventure
 
         if self._current_adventure.is_ending_adventure():
             self._set_status(GameStatus.FINISHED)
-
-
-
-

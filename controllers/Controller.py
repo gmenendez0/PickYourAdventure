@@ -18,6 +18,7 @@ class Controller(ABC):
         return self._format_response(data, HTTPStatus.OK)
 
     def handle_exception(self, exception: Exception) -> tuple[dict, HTTPStatus]:
+        print(exception)
         return self._format_response(self._format_exception(exception), get_http_error_code(exception))
 
     def _format_exception(self, exception: Exception) -> dict:

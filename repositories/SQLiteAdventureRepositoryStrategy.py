@@ -16,7 +16,7 @@ class SQLiteAdventureRepositoryStrategy(RepositoryStrategy):
     def _close_connection(connection: sqlite3.Connection) -> None:
         connection.close()
 
-    def get_by_id(self, instance_id: int):
+    def get_by_id(self, instance_id: int) -> Adventure:
         connection = self._get_connection()
         cursor = connection.cursor()
 

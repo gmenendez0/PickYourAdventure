@@ -10,7 +10,6 @@ class GameController(Controller):
         super().__init__()
         self._game_service = GameService()
 
-    @game_bp.route('/start', methods=['POST'])
     def start_adventure(self):
         try:
             game_status_dto = self._game_service.start_game()
@@ -18,7 +17,6 @@ class GameController(Controller):
         except Exception as e:
             self.handle_exception(e)
 
-    @game_bp.route('/choose', methods=['POST'])
     def choose_path(self):
         try:
             data = self.get_request_data(request)
