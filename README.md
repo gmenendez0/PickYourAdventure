@@ -63,6 +63,8 @@ python app.py
 
 ## API Documentation
 
+### Default exposed Port: 5000
+
 ### POST /game/start
 
 Initiates a new adventure and returns the initial state with available options. 
